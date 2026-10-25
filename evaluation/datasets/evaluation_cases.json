@@ -1,0 +1,110 @@
+[
+  {
+    "id": "tc_01_sql_scorer_2016",
+    "category": "numerical_sql",
+    "question": "Who scored the most runs in IPL 2016?",
+    "expected_route": "SQL_ONLY",
+    "expected_keywords": ["Kohli", "973"],
+    "expected_source_id": "postgres_sql_engine",
+    "notes": "Virat Kohli's historic 973 runs season"
+  },
+  {
+    "id": "tc_02_sql_h2h_csk_mi",
+    "category": "numerical_sql",
+    "question": "What is the head to head record between CSK and MI?",
+    "expected_route": "SQL_ONLY",
+    "expected_keywords": ["Chennai Super Kings", "Mumbai Indians", "41"],
+    "expected_source_id": "postgres_sql_engine",
+    "notes": "All-time rivalry matches"
+  },
+  {
+    "id": "tc_03_sql_wickets_all_time",
+    "category": "numerical_sql",
+    "question": "Who took the most wickets in IPL history?",
+    "expected_route": "SQL_ONLY",
+    "expected_keywords": ["Chahal", "wickets"],
+    "expected_source_id": "postgres_sql_engine",
+    "notes": "All-time leading wicket taker"
+  },
+  {
+    "id": "tc_04_rag_super_over_rule",
+    "category": "semantic_rag",
+    "question": "Explain the cricket rules for tie and super overs in IPL",
+    "expected_route": "RAG_ONLY",
+    "expected_keywords": ["Super Over", "tied", "runs"],
+    "expected_source_id": "dict_tie_super_over",
+    "notes": "Glossary document explaining tie resolutions"
+  },
+  {
+    "id": "tc_05_rag_bowler_wicket_rule",
+    "category": "semantic_rag",
+    "question": "Which dismissals count as bowler wickets according to cricket rules?",
+    "expected_route": "RAG_ONLY",
+    "expected_keywords": ["bowled", "caught", "lbw", "stumped"],
+    "expected_source_id": "dict_bowling_metrics",
+    "notes": "Dismissal rule distinction"
+  },
+  {
+    "id": "tc_06_rag_match_335982",
+    "category": "semantic_rag",
+    "question": "Summarize the match events of IPL match 335982",
+    "expected_route": "RAG_ONLY",
+    "expected_keywords": ["Kolkata Knight Riders", "BB McCullum", "140 runs"],
+    "expected_source_id": "match_335982",
+    "notes": "IPL inaugural match in 2008"
+  },
+  {
+    "id": "tc_07_hybrid_death_overs",
+    "category": "hybrid",
+    "question": "Compare the best players in death overs and explain their strike rate performance",
+    "expected_route": "HYBRID",
+    "expected_keywords": ["Death", "strike rate", "Villiers"],
+    "expected_source_id": "postgres_sql_engine",
+    "notes": "Dual SQL ranking + phase explanation"
+  },
+  {
+    "id": "tc_08_clarification_ambiguous",
+    "category": "clarification",
+    "question": "Who is the best player?",
+    "expected_route": "CLARIFICATION",
+    "expected_keywords": ["specify", "criteria", "season"],
+    "expected_source_id": null,
+    "notes": "Ambiguous query requiring user disambiguation"
+  },
+  {
+    "id": "tc_09_out_of_scope_football",
+    "category": "out_of_scope",
+    "question": "Who won the FIFA World Cup in 2022?",
+    "expected_route": "INSUFFICIENT_DATA",
+    "expected_keywords": ["outside", "IPL", "domain"],
+    "expected_source_id": null,
+    "notes": "Non-cricket domain refusal"
+  },
+  {
+    "id": "tc_10_out_of_scope_future",
+    "category": "out_of_scope",
+    "question": "What was the final score in IPL 2035?",
+    "expected_route": "INSUFFICIENT_DATA",
+    "expected_keywords": ["future", "no IPL data"],
+    "expected_source_id": null,
+    "notes": "Future year data boundary refusal"
+  },
+  {
+    "id": "tc_11_metadata_filter_season",
+    "category": "metadata_filter",
+    "question": "What happened in the Kolkata Knight Riders matches in 2016?",
+    "expected_route": "RAG_ONLY",
+    "expected_keywords": ["Kolkata Knight Riders", "2016"],
+    "expected_source_id": "match_",
+    "notes": "Metadata filtering on season=2016 and team=KKR"
+  },
+  {
+    "id": "tc_12_powerplay_glossary",
+    "category": "semantic_rag",
+    "question": "What are the fielding restrictions during the Powerplay overs?",
+    "expected_route": "RAG_ONLY",
+    "expected_keywords": ["Powerplay", "fielding restrictions", "circle"],
+    "expected_source_id": "dict_match_phases",
+    "notes": "Phase rules glossary"
+  }
+]
